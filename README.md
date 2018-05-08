@@ -6,6 +6,14 @@ Please run website on Google Chrome, IE 9.0, Firefox 3.5, Safari 5.0, Opera 16.0
 
 Utilizes Google Places API for queries, and Masonry.js for layout
 
+Authored Files:
+	
+	-index.html
+	
+	-index.js
+	
+	-style.css
+
 Provides the following features(currently):
 	
 	-Geolocation service
