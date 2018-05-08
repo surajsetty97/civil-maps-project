@@ -5,3 +5,8 @@ html {
 #error{
   color: red;
 }
+
+.item {
+  width: 200px;
+  display: inline-block;
+}

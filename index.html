@@ -11,9 +11,11 @@
     <input type="number" id="longitude"/>
     Place of Interest:
     <input type="text" id="poi"/>
-    <button>Find POI!</button>
+    <button onclick="showLocations()">Find POI!</button>
     <button onclick="getLocation()"> Get my location </button>
     <h4 id="error"></h4>
+    <div id="container"></div>
     <script src="./index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0u1tuDrYSKEJ390PX0jJy-KMSWGZ1HhQ&libraries=places"></script>
   </body>
 </html>
