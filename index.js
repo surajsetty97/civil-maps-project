@@ -12,9 +12,14 @@ function posFunction(position){
   long.value = position.coords.longitude;
 }
 
-//display locations based on user request
+//display locations based on user request - called by poi button
 var count = 0;
 function showLocations(){
+  //reset page look
+  var myNode = document.getElementById("container");
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
   var lat = document.getElementById("latitude");
   var long = document.getElementById("longitude");
   var poi = document.getElementById("poi");
@@ -44,8 +49,11 @@ function callback(results, status, pagination) {
       var photo = '';
       if(results[i].photos!==undefined){
         photo = results[i].photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200});
+        generateImage(photo, results[i].name);
       }
-      generateImage(photo, results[i].name);
+      else{
+        generateStreetView(results[i].geometry.location, results[i].name);
+      }
     }
     if(count==0){
       count++;
@@ -54,14 +62,34 @@ function callback(results, status, pagination) {
   }
 }
 
+//creates image
 function generateImage(image, name){
   var img = document.createElement("img");
   img.setAttribute("src", image);
+  addToDocument(img, name);
+}
+
+//creates street view
+function generateStreetView(latLong, name){
+  var viewDiv = document.createElement("div");
+  viewDiv.setAttribute("class", "view");
+  var streetView = new google.maps.StreetViewPanorama(
+    viewDiv, {
+      position: latLong,
+      pov: {
+        heading: 34,
+        pitch: 10
+      }
+    });
+  addToDocument(viewDiv, name);
+}
+
+function addToDocument(node, name){
   var title = document.createElement("p");
   title.innerHTML = name;
   var div = document.createElement("div");
   div.setAttribute("class", "item");
-  div.appendChild(img);
+  div.appendChild(node);
   div.appendChild(title);
   document.getElementById("container").appendChild(div);
 }

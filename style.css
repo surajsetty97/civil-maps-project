@@ -10,3 +10,8 @@ html {
   width: 200px;
   display: inline-block;
 }
+
+.view {
+  width: 200px;
+  height: 200px;
+}
