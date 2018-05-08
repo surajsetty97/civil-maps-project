@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Civil Maps Page </title>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel = "stylesheet" href = "./style.css">
   </head>
   <body>
@@ -15,6 +17,9 @@
     <button onclick="getLocation()"> Get my location </button>
     <h4 id="error"></h4>
     <div id="container"></div>
+    <div id="saved">
+      <h3> Saved Places </h3>
+    </div>
     <script src="./index.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0u1tuDrYSKEJ390PX0jJy-KMSWGZ1HhQ&libraries=places"></script>
   </body>

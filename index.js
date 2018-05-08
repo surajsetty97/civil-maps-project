@@ -1,3 +1,12 @@
+//masonry init
+
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  columnWidth: 200,
+  gutter: 10,
+  itemSelector: '.item'
+});
+
 //function for location of user - called by location button
 function getLocation(){
   if(navigator.geolocation){
@@ -23,13 +32,14 @@ function showLocations(){
   var lat = document.getElementById("latitude");
   var long = document.getElementById("longitude");
   var poi = document.getElementById("poi");
-  if(lat.value===null || long.value===null || poi.value===null){
+  if(lat.value=="" || long.value=="" || poi.value==""){
     document.getElementById("error").innerHTML="Make sure all fields have correct values";
   }
   else{
     document.getElementById("error").innerHTML="";
     var service = new google.maps.places.PlacesService(document.createElement('div'));
     count = 0;
+    console.log(poi.value);
     service.nearbySearch({
       location: {lat: Number(lat.value), lng: Number(long.value)},
       type: [poi.value],
@@ -89,7 +99,13 @@ function addToDocument(node, name){
   title.innerHTML = name;
   var div = document.createElement("div");
   div.setAttribute("class", "item");
+  var button = document.createElement("button");
+  button.innerHTML="Pin this!";
   div.appendChild(node);
   div.appendChild(title);
+  div.appendChild(button);
   document.getElementById("container").appendChild(div);
+  msnry.appended(div);
+  msnry.reloadItems()
+  msnry.layout();
 }
