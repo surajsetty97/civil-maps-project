@@ -2,7 +2,18 @@
 <html>
   <head>
     <title>Civil Maps Page </title>
+    <link rel = "stylesheet" href = "./style.css">
   </head>
   <body>
+    Latitude:
+    <input type="number" id="latitude"/>
+    Longitude:
+    <input type="number" id="longitude"/>
+    Place of Interest:
+    <input type="text" id="poi"/>
+    <button>Find POI!</button>
+    <button onclick="getLocation()"> Get my location </button>
+    <h4 id="error"></h4>
+    <script src="./index.js"></script>
   </body>
 </html>
