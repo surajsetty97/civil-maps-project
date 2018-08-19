@@ -1,0 +1,15 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "commonjs": false
+  },
+  "globals": {
+    "Masonry": true,
+    "google": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0
+  }
+}

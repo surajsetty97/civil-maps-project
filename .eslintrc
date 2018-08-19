@@ -1,0 +1,62 @@
+{
+  "env": {
+    "es6": true,
+    "browser": false,
+    "node": true,
+    "commonjs": false
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "babel",
+    "flowtype",
+    "import",
+    "jsx-a11y",
+    "promise",
+    "react",
+    "security"
+  ],
+  "extends": [
+    "plugin:promise/recommended",
+    "plugin:flowtype/recommended",
+    "plugin:security/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline",
+      {"functions": "never", "exports": "ignore", "imports": "ignore"}
+    ],
+    "import/no-commonjs": "error",
+    "no-console": 0,
+    "no-magic-numbers": 0,
+    "quotes": [
+      "error",
+      "single",
+      {"avoidEscape": true, "allowTemplateLiterals": true}
+    ],
+    "react/destructuring-assignment": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0,
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
+      }
+    ]
+  }
+}

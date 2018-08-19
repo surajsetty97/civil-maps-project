@@ -1,0 +1,60 @@
+{
+  "files.insertFinalNewline": true,
+
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+
+    ".env": "ignore",
+    ".env.example": "ignore",
+    ".eslintignore": "ignore",
+    ".flowconfig": "ignore",
+    ".npmrc": "ignore",
+    ".prettierignore": "ignore",
+    ".yarnrc": "ignore",
+
+    "*.json": "jsonc",
+    "package.json": "json",
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    ".prettierrc": "jsonc",
+    ".stylelintrc": "json"
+  },
+
+  "editor.tabSize": 2,
+
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "json.format.enable": false,
+  "typescript.format.enable": false,
+
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.formatOnSave": true
+  },
+
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.formatOnSave": true
+  },
+
+  "eslint.workingDirectories": ["."],
+
+  "eslint.packageManager": "yarn",
+
+  "eslint.validate": ["javascript", "javascriptreact"],
+
+  "prettier.eslintIntegration": true,
+  "prettier.ignorePath": ".eslintignore"
+}
